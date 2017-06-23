@@ -8,18 +8,52 @@
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-text-size-adjust:none;
 }
-
-html {
-    overflow: hidden;
+@font-face {
+    font-family: 'ACaslonPro';
+    src: url('fonts/ACaslonPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
 }
 
-a {
-	cursor: default;
+/*MAIN WRAPPER*/
+@media (min-width: 768px) {
+#wrapper.home, .wrapper.home {
+    max-width: 1400px;
+	}
+}
+.wrapper {
+	padding: 24px 6.4%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/*HOME CONTENT*/
+@media (min-width: 768px) {
+.homeContent {
+    padding-top: 180px;
+    padding-bottom: 60px;
+ }
+}
+.homeContent {
+	position: relative;
+	padding: 10px 0 0;
+	margin-bottom: 0;
+	display: block;
+}
+
+#social li a {
+	font-family: 'Menlo';
+	font-size: 20px;
+	color: #BEC2C9;
+	letter-spacing: -0.71px;
+	text-decoration: none;
+}
+#social li a:hover {
+	color: #4B4F56;
 }
 
 body {
 	font-family: 'HelveticaNeue-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 24px;
 	line-height: 1.28;
 }
 
@@ -32,31 +66,74 @@ body {
 }
 
 #topLeft {
-	padding-top: 30px;
-	padding-left: 30px;
+	padding: 72px 8.5%;
 	z-index: 1;
 	position: relative;
-	cursor: default;
 }
 
 #topLeft p.title {
 	color: #b7b7b7;
 }
+#topLeft p.name {
+	font-family: 'Menlo';
+	font-size: 44px;
+	padding-top: 24px;
+}
+
+#content {
+	overflow: hidden;
+	max-width: 800px;
+	padding-left: 30px;
+	padding-top: 24px;
+}
+
+#content ul p {
+	font-family: ACaslonPro-Regular;
+	font-size: 24px;
+	color: #1D2129;
+	letter-spacing: -0.48px;
+	line-height: 36px;
+	padding-bottom: 36px;
+	text-shadow: 0 0 0.05px #4B4F56;
+}
 
 #social li {
 	display: inline-block;
 	padding-top: 12px;
-	opacity: 0.12;
-	-webkit-transition: opacity 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out;
+	padding-right: 24px;
+	font-size: 18px;
+	font-family: menlo;
 }
+
+#social li.active a{
+	display: inline-block;
+	padding-top: 12px;
+	color: #4B4F56;
+	font-size: 18px;
+}
+
 
 #social li:hover {
-	opacity: 1;
+	color: #4B4F56;
 }
 
-.email {
-	padding-left: 5px;
+.avatar {
+    width: 420px;
+		position:fixed;
+    right:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+}
+
+@media screen and (max-width: 768px) {
+.avatar {
+    position: static;
+    text-align: center;
+    width: auto;
+    top: auto;
+    bottom: auto;
+	}
 }
 
 #slides li {
@@ -78,28 +155,33 @@ body {
   cursor: -webkit-grabbing;
 }
 
-#slides li.reactions {
-	background-image: url(slide-reactions.jpg);
+#slides li.intu {
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.paper {
-	background-image: url(slide-paper.jpg);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.origami {
-	background-image: url(slide-origami.jpg);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.origami p.iphone {
 	display: none;
 }
 
-#slides li.chatHeads {
-	background-image: url(slide-chatheads.jpg);
+#slides li.random {
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.logo {
-	background-image: url(slide-logo.png);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.logo p.iphone {
@@ -107,20 +189,20 @@ body {
 }
 
 #slides li.swipe {
-	background-image: url(slide-swipe.jpg);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.drawer {
-	background-image: url(slide-drawer.jpg);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
 #slides li.capo {
-	background-image: url(slide-capo.jpg);
+	background-image: url(intu.png);
+	background-size: 20%;
 }
 
-#slides li.billings {
-	background-image: url(slide-billings.jpg);
-}
 
 #slides p {
 	font-size: 11px;
@@ -175,6 +257,8 @@ body {
 	padding: 0 18px;
 	cursor: default;
 }
+
+
 
 /*iPhone*/
 @media only screen and (max-device-width: 628px) {
@@ -240,9 +324,6 @@ body {
 		background-image: url(slide-capo-iphone.jpg);
 	}
 
-	#slides li.billings {
-		background-image: url(slide-billings-iphone.jpg);
-	}
 
 	#slides li.logo {
 		background-image: url(slide-logo-iphone.png);
